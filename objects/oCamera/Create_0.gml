@@ -27,10 +27,18 @@ camera = function()
        //se meu alvo.y for maior que meu camera_get_view_y que retorna o proprio y da camera
        if(alvo.y > camera_get_view_y(view_camera[0]) + 380)
        {
-           global.acai_coletado = 0
+        
+           if(global.pontos > global.recorde_maximo)
+           {
+               global.recorde_maximo = global.pontos; //Atualiza o recorde!
+           }
+           global.acai_total += global.acai_coletado
            global.pontos = 0
-           //ele reiniciara o jogo
-           game_restart()
+           global.acai_coletado = 0 
+           //Aponta a sala de destino para a room do recorde
+           global.sala_destino = rm_inicio;
+           room_goto(global.sala_destino)
+           audio_stop_all()
        }
     }
 }

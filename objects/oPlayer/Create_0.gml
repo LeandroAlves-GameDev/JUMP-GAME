@@ -1,6 +1,8 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+minhas_skins = [spr_player_case, spr_player_be, spr_player_al]
+sprite_index = minhas_skins[global.skin_equipada]
 
 //Criando uma variavel para nossa velocidade vertical 
 velv = 0
